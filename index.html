@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="container_img_title">
+                <img src="icon/pot-kitchenware-svgrepo-com.svg" class="navbar-brand size">
+                <span class = "orange_color">Casa d'eccellenza</span>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="#">Cucina</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        Arredo
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        Offerte
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        Blog
+                    </a>
+                    </li>
+                </ul>
+            </div>
+            <div class = "icon_login">
+                <div class="search_container">
+                    <img src="icon/search-svgrepo-com.svg" id="search_icon">
+                    <div class="search_box">
+                        <input type="text" placeholder="Cerca...">
+                    </div>
+                </div>
+                <div class="login_container">
+                    <img src="icon/user-alt-1-svgrepo-com.svg" id = "login_icon">
+                    <div class = "login_box">
+                            <label for="username">Username</label>
+                            <input type="text" id = username placeholder="Username">
+                            <label for="password">Password</label>
+                            <input type="password" id = "password" placeholder="Password">
+                            <div class = link_login>
+                                <a href="">Sign in</a>
+                                <a href="">Forgot Password</a>
+                            </div>
+                    </div>
+                </div>
+                <img src="icon/cart-shopping-svgrepo-com.svg" id = "cart_icon"     src="icon/cart-shopping-svgrepo-com.svg"
+                id="cart_icon"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvas">
+            </div>
+        </div>
+    </nav>
+    <main>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasLabel">Offcanvas</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                Content for the offcanvas goes here. You can place just about any Bootstrap component or custom elements here.
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
