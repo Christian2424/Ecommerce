@@ -1,7 +1,6 @@
 from flask import Flask, request, render_template, redirect, url_for, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-import requests
 from database import db
 from models import collection, product, user, cartitem, order, orderitem
 from sqlalchemy import func
