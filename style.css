@@ -125,17 +125,25 @@
     left: auto !important;
 }
 
-#img_home{
+
+#home{
+        
     width: 100%;
     height: 500px;
     position: relative;
+}
+
+#img_home{
+    width: 100%;
+    height: 100%;
     opacity: 0.9;
 }
 
 .text_inside_img{
     position: absolute;
     top: 50%;
-    left: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
