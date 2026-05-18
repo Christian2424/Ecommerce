@@ -3,10 +3,15 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from database import db
 from models import collection, product, user, cartitem, order, orderitem
+from models.collection import Collection
+from models.product import Product
+from models.orderitem import OrderItem
 from sqlalchemy import func
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///ecommerce_home.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -22,24 +27,21 @@ def get_collection():
 
 @app.route("/getbestseller")
 def get_products():
-    bestseller = db.session.query(
-        Product, 
-        func.count(OrderItem.id).label('numero_vendite')
-    ).join(OrderItem, Product.id == OrderItem.product_id) \
-    .group_by(Product.id) \
-    .order_by(func.desc('numero_vendite')) \
-    .limit(4) \
-    .all()
+
+    bestsellers = db.session.query(Product)\
+        .join(OrderItem, Product.id == OrderItem.product_id)\
+        .group_by(Product.id)\
+        .order_by(func.sum(OrderItem.quantity).desc())\
+        .limit(4)\
+        .all()
 
     list_bestseller = []
-    for product in bestseller:
+    for product in bestsellers:
         list_bestseller.append({
-            'id': product[0].id,
-            'name': product[0].name,
-            'price': product[0].price,
-            'img_url': product[0].img_url,
-            'collection_id': product[0].collection_id,
-            'numero_vendite': product[1]
+            'id': product.id,
+            'name': product.name,
+            'price': product.price,
+            'img_url': product.img_url,
         })
 
     return jsonify(list_bestseller)

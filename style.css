@@ -175,5 +175,27 @@
 
 #products h3{
     margin-top: 30px;
+    margin-bottom: 30px;
     text-align: center;
+}
+
+#products{
+    width: 100%;
+}
+
+#container_card_bestseller{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.card-img-top{
+    height: 250px !important;
+}
+
+.card-body{
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
 }
